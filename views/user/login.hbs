@@ -1,0 +1,39 @@
+<div class="row" >
+    <div class="col-md-6 m-auto ">
+        <div class="border border-info mt-5" style="border-radius: 1rem;" id="background">
+        <div class="container mt-5 pl-5 ">
+           
+           
+                <form action="/login" method="POST" >
+                <h2 class="text-center text-info">Login</h2>
+            {{#if loginErr}}
+            <p class="error" style="color: red;">Invalid Username or Password
+
+            </p>
+            {{/if}}
+                <div class="form-group">
+    <label class="text-info">Email address</label>
+    <input type="email" name="email" class="form-control text-info"  placeholder="Enter email">
+    
+  </div>
+   <div class="form-group">
+    <label class="text-info">Password</label>
+    <input type="password" name="password"   class="form-control"  placeholder="Password">
+  </div>
+  <a href="/signup">Create new account</a>
+  <button type="submit" class="btn btn-info float-right">Login</button><br><br><br>
+ 
+            </form>
+
+          
+        </div>
+        </div>
+    </div>
+</div>
+<style>
+    #background{
+         background-image: linear-gradient(#96E4DF,#4DCCC6);
+    }
+</style>
+
+
