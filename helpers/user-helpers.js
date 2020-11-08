@@ -351,8 +351,17 @@ module.exports = {
                 resolve()
             })
         })
-    }
+    },
 
-
+    deleteProduct:(proId)=>{
+        return new Promise((resolve,reject)=>{
+          console.log(proId);
+          console.log(objectId(proId));
+          db.get().collection(collection.CART_COLLECTION).removeOne({_id:objectId(proId)}).then((response)=>{
+           // console.log(response);
+            resolve(response)
+          })
+        })
+      }
 
 }

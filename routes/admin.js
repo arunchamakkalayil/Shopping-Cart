@@ -2,19 +2,25 @@ var express = require('express');
 const router = express.Router();
 var productHelpers = require('../helpers/product-helpers');
 const { response } = require('express');
+const userHelpers = require('../helpers/user-helpers');
 const verifyLogin = (req, res, next) => {
   if (req.session.adminLoggedIn) {
     next()
   } else {
-    res.redirect('/adminlogin')
+    res.redirect('/admin/adminlogin')
   }
 }
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
+router.get('/',verifyLogin, function (req, res, next) {
+  let admin=req.session.admin;
+  if(admin){
+    admin.status=true
+    console.log(admin);
+  }
   productHelpers.getAllProducts().then((products)=>{
     console.log(products)
-    res.render('admin/view-products', { admin: true, products})
+    res.render('admin/view-products', { admin, products})
   })
 });
 router.get('/add-product', verifyLogin,function (req, res) {
@@ -73,35 +79,36 @@ router.get('/adminlogin', (req, res) => {
     req.session.adminLoginErr = false
 
   }
-
+ 
 
 })
 router.get('/admin-signup', (req, res) => {
-  res.render('admin/admin-signup')
-
-})
-router.post('/admin-signup', (req, res) => {
-  productHelpers.adminSignup(req.body).then((response) => {
-    console.log(response)
-    
-    req.session.admin = response
-    req.session.adminLoggedIn = true
-    res.redirect('/admin/')
+  let admin = req.session.admin
+    res.render('admin/admin-signup',{admin})
+  
+  })
+  router.post('/admin-signup', (req, res) => {
+    productHelpers.adminSignup(req.body).then((response) => {
+      console.log(response);
+      
+      req.session.admin = response
+      req.session.adminLoggedIn = true
+      res.redirect('/admin/')
+    })
+  
   })
 
-})
 router.post('/adminlogin', (req, res) => {
 
   productHelpers.adminLogin(req.body).then((response) => {
-    console.log(response)
     if (response.status) {
      
       req.session.admin = response.admin
       req.session.adminLoggedIn = true
 
-      res.redirect('/admin/')
+      res.redirect('/admin')
     } else {
-      req.session.adminLoginErr = true
+      req.session.adminLoginErr = "Invalid Username or Password"
       res.redirect('/admin/adminlogin')
     }
   })
@@ -109,7 +116,16 @@ router.post('/adminlogin', (req, res) => {
 })
 router.get('/adminlogout', (req, res) => {
   req.session.admin=null
-  req.session.adminLoggedIn=false
-  res.redirect('/adminlogin')
+  req.session.adminLoggedIn=null
+  res.redirect('/admin/')
 })
+
+router.get('/remove-product/:id', (req, res) => {
+  let proId = req.params.id
+  console.log(proId);
+  userHelpers.deleteProduct(proId).then((response) => {
+    res.redirect('/cart/')
+  })
+})
+
 module.exports = router;
