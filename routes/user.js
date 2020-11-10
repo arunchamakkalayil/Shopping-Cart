@@ -98,11 +98,11 @@ router.get('/add-to-cart/:id', (req, res) => {
 
   })
 
-   router.get('/delete-product/:id', (req, res) => {
-    let proId = req.params.id
-    console.log(proId);
-    productHelpers.deleteProduct(proId).then((response) => {
-      res.redirect('/user/')
+  router.post('/delete-Product', (req, res, next) => {
+    console.log(req.body);
+  
+    userHelpers.deleteProduct(req.body).then((response) => {
+      res.json(response)
     })
   })
 

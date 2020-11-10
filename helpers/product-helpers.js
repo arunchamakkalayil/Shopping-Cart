@@ -89,7 +89,13 @@ module.exports={
           }
 
       })
+  },
+  getAllUsers:(users)=>{
+    return new Promise((resolve,reject)=>{
+      
+    })
   }
+
     
     
 

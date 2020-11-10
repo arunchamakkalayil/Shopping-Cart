@@ -127,5 +127,13 @@ router.get('/remove-product/:id', (req, res) => {
     res.redirect('/cart/')
   })
 })
+router.get('/all-users',verifyLogin,(req,res)=>{
+  let  admin=req.session.admin;
+  
+  productHelpers.getAllUsers().then((users) => {
+    console.log(users);
+    res.render('admin/all-users', {Admin:req.session.admin,admin,users})
+  })
+})
 
 module.exports = router;
