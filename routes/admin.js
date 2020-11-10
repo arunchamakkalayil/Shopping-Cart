@@ -135,5 +135,13 @@ router.get('/all-users',verifyLogin,(req,res)=>{
     res.render('admin/all-users', {Admin:req.session.admin,admin,users})
   })
 })
+router.get('/all-orders',verifyLogin,(req,res)=>{
+  let  admin=req.session.admin;
+  
+  productHelpers.getAllOrders().then((orders) => {
+    
+    res.render('admin/all-orders', {Admin:req.session.admin,admin,orders})
+  })
+})
 
 module.exports = router;
