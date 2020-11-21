@@ -1,49 +1,342 @@
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    bottom: 0;
+    padding: 0;
+}
+
+.cart-table{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+table{
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /* box-shadow: 0px 0px 0px 0px #cccd; */
+    width: 98%;
+
+}
+.heading{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    background-color: rgb(230, 230, 230);
+    padding:20px;
+display: flex;    width:100% ;
+    justify-content: space-around;
+}
+
+
+.data{
+    border-bottom: 1px solid #70707067;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+td img{
+    width: 70px;
+    height: 70px;
+}
+
+.q1{
+font-size: 20px;
+margin-right: 10px;
+    border: none;
+    background: none;
+}
+.q2{
+    margin-left: 10px;
+font-size: 16px;
+margin-right: 10px;
+    border: none;
+    background: none;
+}
+button:focus{
+    outline:none;
+}
+
+
+
+.del{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+width: 30px;
+height: 30px;
+    border: none;
+    background-color: red;
+}
+.del img{
+    width: 20px;
+}
+
+
+@media screen and (max-width:500px){
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        bottom: 0;
+        padding: 0;
+    }
+    
+    .cart-table{
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    table{
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    
+        /* box-shadow: 0px 0px 0px 0px #cccd; */
+        width: 98%;
+    
+    }
+    .heading{
+        font-size: 13px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    
+        background-color: rgb(230, 230, 230);
+        padding:20px;
+    display: flex;    width:100% ;
+        justify-content: space-around;
+    }
+    
+    
+    .data{
+    font-size: 12px;
+        border-bottom: 1px solid #70707067;
+        padding: 20px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+    td img{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .q1{
+    font-size: 20px;
+    margin-right: 10px;
+        border: none;
+        background: none;
+    }
+    .q2{
+        margin-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+        border: none;
+        background: none;
+    }
+}*{
+    box-sizing: border-box;
+    margin: 0;
+    bottom: 0;
+    padding: 0;
+}
+
+.cart-table{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+table{
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /* box-shadow: 0px 0px 0px 0px #cccd; */
+    width: 98%;
+
+}
+.heading{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    background-color: rgb(230, 230, 230);
+    padding:20px;
+display: flex;    width:100% ;
+    justify-content: space-around;
+}
+
+
+.data{
+    border-bottom: 1px solid #70707067;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+td img{
+    width: 70px;
+    height: 70px;
+}
+
+.q1{
+font-size: 20px;
+margin-right: 10px;
+    border: none;
+    background: none;
+}
+.q2{
+    margin-left: 10px;
+font-size: 16px;
+margin-right: 10px;
+    border: none;
+    background: none;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:500px){
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        bottom: 0;
+        padding: 0;
+    }
+    
+    .cart-table{
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    table{
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    
+        /* box-shadow: 0px 0px 0px 0px #cccd; */
+        width: 98%;
+    
+    }
+    .heading{
+        font-size: 13px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    
+        background-color: rgb(230, 230, 230);
+        padding:20px;
+    display: flex;    width:100% ;
+        justify-content: space-around;
+    }
+    
+    
+    .data{
+    font-size: 12px;
+        border-bottom: 1px solid #70707067;
+        padding: 20px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+    td img{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .q1{
+    font-size: 20px;
+    margin-right: 10px;
+        border: none;
+        background: none;
+    }
+    .q2{
+        margin-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+        border: none;
+        background: none;
+    }
+}
+
+</style>
 <section>
-    <div class="container">
-        <table class="table mt-5">
-            <thead>
+   
+            <div class="cart-table">
+                <table >
+                   
 
-                <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">&nbsp;&nbsp;Quantity</th>
-                      <th scope="col">Remove</th>
+                         <tr class="heading">
+                <th>Item</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Del</th>
+            </tr>
+                 
+                   
+                        {{#each products}}
+                        <tr class="data">
 
-                </tr>
-            </thead>
-            <tbody>
-                {{#each products}}
-                <tr>
+                            <td><img  src="/product-images/{{this.product._id}}.jpg" alt="image">
+                            </td>
+                            <td>{{this.product.Name}}</td>
+                            <td>Rs.{{this.product.Price}}</td>
 
-                    <td><img style="width: 70px;height:70px" src="/product-images/{{this.product._id}}.jpg" alt="image">
-                    </td>
-                    <td>{{this.product.Name}}</td>
-                    <td>Rs.{{this.product.Price}}</td>
-
-                    <td>
-                        <button class="cart-item-count mr-3"
-                            onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
-                        <span id="{{this.product._id}}">{{this.quantity}}</span>
-                        <button class="cart-item-count ml-3"
-                            onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
-                    </td>
-                    <td>
-                        <a  class="btn btn-danger"
-                            onclick="deleteProduct('{{this._id}}','{{this.product._id}}','{{../user}}')">Remove</a>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-        <hr>
-        <h5 class="float-right mr-6 mt-4" style="margin-right: 7rem;">TOTAL: RS.<span id="total">{{totalValue}}</span>
-        </h5><br><br><br>
-        <a href="/place-order" class="float-right btn btn-success mr-6" style="width:200px;margin-right:5rem">Place
-            Order</a>
-    </div>
+                            <td class="1">
+                                <button class="q1"
+                                    onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                                <span class="quantity mt-2" id="{{this.product._id}}">{{this.quantity}}</span>
+                                <button class="q2 " 
+                                    onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                            </td>
+                            <td>
+                                <a ><button class="del"
+                                    onclick="deleteProduct('{{this._id}}','{{this.product._id}}','{{../user}}')"><img
+                                        src="/images/trash-2.svg" alt=""></button></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    
+                </table>
+              
+            </div>
+  
 </section>
-
+<div class="place-order">
+      
+                <hr>
+                <h5 id="h5" class="float-right mr-5 mt-4">TOTAL: RS.<span id="total">{{totalValue}}</span>
+                </h5><br><br><br>
+               <a id="place-order" href="/place-order" class="btn btn-success float-right mr-5 mt-4"> Place
+                    Order </a>
+</div>
 <script>
     function changeQuantity(cartId, proId, userId, count) {
         let quantity = parseInt(document.getElementById(proId).innerHTML)
@@ -73,25 +366,25 @@
 
                 }
             }
-        })       
+        })
     }
-    </script>
-    <script>
-   
+</script>
+<script>
 
-    function deleteProduct(cartId,proId,userId){
-        
+
+    function deleteProduct(cartId, proId, userId) {
+
         $.ajax({
-            url:'/delete-Product',
-            data:{
-                user:userId,
-                cart:cartId,
-                product:proId
+            url: '/delete-Product',
+            data: {
+                user: userId,
+                cart: cartId,
+                product: proId
             },
-            
-            method:'post',
-            success:(response)=>{
-                if(response.removeProduct){
+
+            method: 'post',
+            success: (response) => {
+                if (response.removeProduct) {
                     alert("Product removed from cart")
                     location.reload()
                 }
