@@ -26,7 +26,7 @@ router.get('/',verifyLogin, function (req, res, next) {
 router.get('/add-product', verifyLogin,function (req, res) {
   res.render('admin/add-product')
 })
-router.post('/add-product', (req, res) => {
+router.post('/add-product', verifyLogin,(req, res) => {
   productHelpers.addProduct(req.body, (id) => {
     let image = req.files.Image
     console.log(id);
